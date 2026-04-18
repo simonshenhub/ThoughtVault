@@ -227,8 +227,9 @@
     // ===== SUPABASE CONFIG =====
     // Replace these with your Supabase project values:
     // Found at: https://supabase.com/dashboard → Settings → API
-    const SUPABASE_URL = 'https://btwzesufypmtugrxigmp.supabase.co';
-    const SUPABASE_ANON_KEY = 'sb_publishable_tvEXoAWvSiTrObR_Cr4tkA_6LKNPQqM';
+    const SUPABASE_URL = 'https://xbouikkzywbknxwkdaxx.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_h9NO_aoJ5pYAFMRJ_pK_cQ_dwvxwV2t';
+    const SUPABASE_SCHEMA = 'thoughtvault';
     // ===========================
 
     const form = document.getElementById('quoteForm');
@@ -260,6 +261,8 @@
             'Content-Type': 'application/json',
             'apikey': SUPABASE_ANON_KEY,
             'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Accept-Profile': SUPABASE_SCHEMA,
+            'Content-Profile': SUPABASE_SCHEMA,
             'Prefer': 'return=minimal'
           },
           body: JSON.stringify({ text, category, source })
